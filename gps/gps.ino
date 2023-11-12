@@ -3,13 +3,14 @@
 #define ss Serial2
 
 static const uint32_t GPSBaud = 9600;
+static const uint32_t serialMonitorBaud = 115200;
 
 // The TinyGPSPlus object
 TinyGPSPlus gps;
 
 void setup()
 {
-  Serial.begin(115200);
+  Serial.begin(serialMonitorBaud);
   ss.begin(GPSBaud);
 
   Serial.println(F("DeviceExample.ino"));
