@@ -3,7 +3,7 @@
 #include <TinyGPSPlus.h>
 #include <SoftwareSerial.h>
 #define ss Serial2
-#define laserSerial Serial3
+#define laserSerial Serial1
 
 MPU9250 mpu;
 
@@ -183,10 +183,10 @@ void loop()
             float newLat, newLng;
             calculateNewCoordinates(lat, lng, heading, distance, newLat, newLng);
             
-            Serial.print("lng:");
-            Serial.println(lng, 6);
-            Serial.print("lat:");
+            Serial.print("Current Latitude:");
             Serial.println(lat, 6);
+            Serial.print("Current Longitude:");
+            Serial.println(lng, 6);
             Serial.print("Number of connected Satellites:");
             Serial.println(gps.satellites.value());
             Serial.print("Compass Heading:");

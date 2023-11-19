@@ -1,4 +1,4 @@
-#define laserSerial Serial3
+#define laserSerial Serial1
 unsigned char buf[50]; 
 int index = 0; 
 
@@ -68,7 +68,7 @@ float getDistance(){
 }
 
 void setup() {
-  Serial.begin(19200);
+  Serial.begin(115200);
   SetupLaserSerial();
   laserOn();
 }
